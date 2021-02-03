@@ -24,15 +24,15 @@ class Wms_Login:
         # 输入租户
         time.sleep(1)
         driver.find_element_by_xpath("//input[@placeholder='请输入租户ID']").click()
-        driver.find_element_by_xpath("//input[@placeholder='请输入租户ID']").send_keys('admin')
+        driver.find_element_by_xpath("//input[@placeholder='请输入租户ID']").send_keys('vevor')
         # 输入账号
         time.sleep(1)
         driver.find_element_by_xpath("//input[@placeholder='请输入账号']").click()
-        driver.find_element_by_xpath("//input[@placeholder='请输入账号']").send_keys('murphy')
+        driver.find_element_by_xpath("//input[@placeholder='请输入账号']").send_keys('wms')
         # 输入密码
         time.sleep(1)
         driver.find_element_by_xpath("//input[@placeholder='请输入密码']").click()
-        driver.find_element_by_xpath("//input[@placeholder='请输入密码']").send_keys('!sishun666')
+        driver.find_element_by_xpath("//input[@placeholder='请输入密码']").send_keys('wms')
         # 输入验证码
         driver.find_element_by_xpath("//input[@placeholder='请输入验证码']").send_keys('11111')
         # 点击登录
