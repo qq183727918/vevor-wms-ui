@@ -17,7 +17,7 @@ class Warehouse(Enum):
     # 客户
     CUSTOMER = "//input[@placeholder='客户']"
     # 运输方式
-    tRANSPORT = "//input[@placeholder='运输方式']"
+    TRANSPORT = "//input[@placeholder='运输方式']"
     # 状态
     STATUS = "//input[@placeholder='状态']"
     # 目的仓
