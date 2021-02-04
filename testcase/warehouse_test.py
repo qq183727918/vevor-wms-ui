@@ -12,6 +12,7 @@ import unittest
 
 from BeautifulReport import BeautifulReport
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
@@ -33,7 +34,7 @@ class Warehouse(unittest.TestCase):
         self.driver = Wms_Login().test_login()
         self.wait = WebDriverWait(self.driver, 60)
 
-    @BeautifulReport.add_test_img('test_warehouse')
+    @BeautifulReport.add_test_img("test_warehouse")
     def test_warehouse(self):
         """
         入库单
@@ -47,58 +48,64 @@ class Warehouse(unittest.TestCase):
         # 入库单号
         self.wait_time("//input[@placeholder='入库单号']")
         self.driver.find_element_by_xpath("//input[@placeholder='入库单号']").send_keys('RK2021020100000177')
-        self.select_test()
-        Inbound = self.driver.find_element_by_xpath("(//div[@class='cell']//span)[2]").text
-        print(Inbound)
-        self.save_img("Warehouse_test_warehouse")
-        assert Inbound == 'RK2021020100000177'
-        time.sleep(2)
+        # self.select_test()
+        # Inbound = self.driver.find_element_by_xpath("(//div[@class='cell']//span)[2]").text
+        # print(Inbound)
+        # self.save_img("Warehouse_test_warehouse")
+        # assert Inbound == 'RK2021020100000177'
+        time.sleep(1)
         # 客户
         self.wait_time("//input[@placeholder='客户']")
         self.driver.find_element_by_xpath("//input[@placeholder='客户']").click()
-        self.wait_time("//li[@class='el-select-dropdown__item hover']//span[1]")
-        self.driver.find_element_by_xpath("//li[@class='el-select-dropdown__item hover']//span[1]").click()
-        customer = self.driver.find_element_by_xpath("//li[@class='el-select-dropdown__item hover']//span[1]").text
-        print(Inbound)
-        self.select_test()
-        self.save_img("Warehouse_test_warehouse")
-        assert customer == '上海司顺电子商务有限公司'
-        time.sleep(2)
+        self.driver.find_element_by_xpath("//input[@placeholder='客户']").send_keys(Keys.DOWN)
+        self.driver.find_element_by_xpath("//input[@placeholder='客户']").send_keys(Keys.ENTER)
+        # self.select_test()
+        # customer = self.driver.find_element_by_xpath("//li[@class='el-select-dropdown__item hover']//span[1]").text
+        # print(customer)
+        # self.save_img("Warehouse_test_warehouse")
+        # assert customer == '上海司顺电子商务有限公司'
+        time.sleep(1)
         # 运输方式
         self.wait_time("//input[@placeholder='运输方式']")
         self.driver.find_element_by_xpath("//input[@placeholder='运输方式']").click()
-        self.driver.find_element_by_xpath("(//li[@class='el-select-dropdown__item hover'])[2]").click()
-        transport = self.driver.find_element_by_xpath("(//li[@class='el-select-dropdown__item hover'])[2]").text
-        self.select_test()
-        self.save_img("Warehouse_test_warehouse")
-        assert transport == '卡车'
-        time.sleep(2)
+        self.driver.find_element_by_xpath("//input[@placeholder='运输方式']").send_keys(Keys.DOWN)
+        self.driver.find_element_by_xpath("//input[@placeholder='运输方式']").send_keys(Keys.DOWN)
+        self.driver.find_element_by_xpath("//input[@placeholder='运输方式']").send_keys(Keys.ENTER)
+        # self.select_test()
+        # transport = self.driver.find_element_by_xpath("(//li[@class='el-select-dropdown__item hover'])[2]").text
+        # self.save_img("Warehouse_test_warehouse")
+        # assert transport == '卡车'
+        time.sleep(1)
         # 状态
         self.wait_time("//input[@placeholder='状态']")
         self.driver.find_element_by_xpath("//input[@placeholder='状态']").click()
-        self.driver.find_element_by_xpath("(//li[contains(@class,'el-select-dropdown__item selected')])[2]").click()
-        status = self.driver.find_element_by_xpath(
-            "(//li[contains(@class,'el-select-dropdown__item selected')])[2]").text
-        self.select_test()
-        self.save_img("Warehouse_test_warehouse")
-        assert status == '作业中'
-        time.sleep(2)
+        self.driver.find_element_by_xpath("//input[@placeholder='状态']").send_keys(Keys.DOWN)
+        self.driver.find_element_by_xpath("//input[@placeholder='状态']").send_keys(Keys.DOWN)
+        self.driver.find_element_by_xpath("//input[@placeholder='状态']").send_keys(Keys.ENTER)
+        # self.select_test()
+        # status = self.driver.find_element_by_xpath(
+        #     "(//li[contains(@class,'el-select-dropdown__item selected')])[2]").text
+        #
+        # self.save_img("Warehouse_test_warehouse")
+        # assert status == '作业中'
+        time.sleep(1)
         # 目的仓
         self.wait_time("//input[@placeholder='目的仓']")
         self.driver.find_element_by_xpath("//input[@placeholder='目的仓']").click()
-        self.driver.find_element_by_xpath("(//li[@class='el-select-dropdown__item hover']//span)[3]").click()
-        warehouse = self.driver.find_element_by_xpath("(//li[@class='el-select-dropdown__item hover']//span)[3]").text
+        self.driver.find_element_by_xpath("//input[@placeholder='目的仓']").send_keys(Keys.DOWN)
+        self.driver.find_element_by_xpath("//input[@placeholder='目的仓']").send_keys(Keys.ENTER)
         self.select_test()
-        self.save_img("Warehouse_test_warehouse")
-        assert warehouse == '美西CA-USSR司顺洛杉矶仓'
-        time.sleep(2)
+        # warehouse = self.driver.find_element_by_xpath("(//li[@class='el-select-dropdown__item hover']//span)[3]").text
+        # self.save_img("Warehouse_test_warehouse")
+        # assert warehouse == '美西CA-USSR司顺洛杉矶仓'
+        time.sleep(1)
         # 创建时间
         self.wait_time("//input[@placeholder='开始日期']")
         self.driver.find_element_by_xpath("//input[@placeholder='开始日期']").click()
         self.driver.find_element_by_xpath("//input[@placeholder='开始日期']").send_keys('2021-02-01 00:00:00')
         self.wait_time("//input[@placeholder='结束日期']")
         self.driver.find_element_by_xpath("//input[@placeholder='结束日期']").click()
-        self.driver.find_element_by_xpath("//input[@placeholder='开始日期']").send_keys('2021-02-10 00:00:00')
+        self.driver.find_element_by_xpath("//input[@placeholder='结束日期']").send_keys('2021-02-10 00:00:00')
         self.select_test()
 
     def select_test(self):
