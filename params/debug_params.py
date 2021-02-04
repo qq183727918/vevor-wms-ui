@@ -53,3 +53,9 @@ class ParamsTest(Enum):
             # '--proxy-server=http://localhost:1080'  # 代理
         ],
     }
+    # 时间
+    TIME = 0.5
+    # 魔法值
+    MAGICAL = 0
+    # 等待时间
+    WAITING = 100

@@ -1,8 +1,8 @@
 """
 _*_ coding: UTF-8 _*_
-@Time      : 2021/2/4 10:22
+@Time      : 2ParamsTest.MAGICAL.value2ParamsTest.TIME.value/2/4 ParamsTest.TIME.valueParamsTest.MAGICAL.value:22
 @Author    : LiuXiaoQiang
-@Site      : https://github.com/qq183727918
+@Site      : https://github.com/qqParamsTest.TIME.value837279ParamsTest.TIME.value8
 @File      : debug.py
 @Software  : PyCharm
 """
@@ -27,47 +27,45 @@ async def main():
     # 输入租户ID
     click_handle = await page.xpath(ParamsTest.TENANT.value)
     print(F'输入租户ID:{click_handle}')
-    await click_handle[0].type(ParamsTest.TENANT_ID.value, {'delay': 100})
-    await asyncio.sleep(1)
+    await click_handle[ParamsTest.MAGICAL.value].type(ParamsTest.TENANT_ID.value, {'delay': ParamsTest.WAITING.value})
+    await asyncio.sleep(ParamsTest.TIME.value)
     # 输入账号
     click_handle = await page.xpath(ParamsTest.USERNAME.value)
     print(F'输入账号:{click_handle}')
-    await click_handle[0].type(ParamsTest.NAME.value, {'delay': 100})
-    await asyncio.sleep(1)
+    await click_handle[ParamsTest.MAGICAL.value].type(ParamsTest.NAME.value, {'delay': ParamsTest.WAITING.value})
+    await asyncio.sleep(ParamsTest.TIME.value)
     # 输入密码
     click_handle = await page.xpath(ParamsTest.PASSWORD.value)
     print(F'输入密码:{click_handle}')
-    await click_handle[0].type(ParamsTest.PWD.value, {'delay': 100})
+    await click_handle[ParamsTest.MAGICAL.value].type(ParamsTest.PWD.value, {'delay': ParamsTest.WAITING.value})
     # 输入验证码
     click_handle = await page.xpath(ParamsTest.VERIFICATION.value)
     print(F'输入验证码:{click_handle}')
-    await click_handle[0].type(ParamsTest.VERIFICATION_CODE.value, {'delay': 100})
+    await click_handle[ParamsTest.MAGICAL.value].type(ParamsTest.VERIFICATION_CODE.value, {'delay': ParamsTest.WAITING.value})
     # 点击登录按钮
     click_handle = await page.xpath(ParamsTest.BUTTON.value)
     print(F'点击登录按钮:{click_handle}')
-    await click_handle[0].click()
-    await asyncio.sleep(2)
+    await click_handle[ParamsTest.MAGICAL.value].click()
+    await asyncio.sleep(ParamsTest.TIME.value)
     # 点击入库管理
     click_handle = await page.xpath(ParamsTest.MANAGEMENT.value)
     print(F'点击入库管理:{click_handle}')
-    await click_handle[0].click()
-    await asyncio.sleep(1)
+    await click_handle[ParamsTest.MAGICAL.value].click()
+    await asyncio.sleep(ParamsTest.TIME.value)
     # 点击入库单
     click_handle = await page.xpath(ParamsTest.RECEIPT.value)
     print(F'点击入库单:{click_handle}')
-    await click_handle[0].click()
-    await asyncio.sleep(1)
+    await click_handle[ParamsTest.MAGICAL.value].click()
+    await asyncio.sleep(ParamsTest.TIME.value)
     # 入库单号
     click_handle = await page.xpath(Warehouse.RECEIPT.value)
     print(F'入库单号:{click_handle}')
-    await click_handle[0].type(Warehouse.RECEIPT_NUM.value, {'delay': 100})
+    await click_handle[ParamsTest.MAGICAL.value].type(Warehouse.RECEIPT_NUM.value, {'delay': ParamsTest.WAITING.value})
     # 查询
     click_handle = await page.xpath(Warehouse.SELECT.value)
     print(F'查询:{click_handle}')
-    await click_handle[0].click()
-    await asyncio.sleep(1)
-
-
+    await click_handle[ParamsTest.MAGICAL.value].click()
+    await asyncio.sleep(ParamsTest.TIME.value)
     await driver.close()
 
 
