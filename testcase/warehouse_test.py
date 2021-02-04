@@ -48,11 +48,11 @@ class Warehouse(unittest.TestCase):
         # 入库单号
         self.wait_time("//input[@placeholder='入库单号']")
         self.driver.find_element_by_xpath("//input[@placeholder='入库单号']").send_keys('RK2021020100000177')
-        # self.select_test()
-        # Inbound = self.driver.find_element_by_xpath("(//div[@class='cell']//span)[2]").text
-        # print(Inbound)
-        # self.save_img("Warehouse_test_warehouse")
-        # assert Inbound == 'RK2021020100000177'
+        self.select_test()
+        Inbound = self.driver.find_element_by_xpath("(//div[@class='cell']//span)[2]").text
+        print(Inbound)
+        self.save_img("Warehouse_test_warehouse")
+        assert Inbound == 'RK2021020100000177'
         time.sleep(1)
         # 客户
         self.wait_time("//input[@placeholder='客户']")
