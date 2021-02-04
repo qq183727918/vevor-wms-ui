@@ -54,7 +54,7 @@ class ParamsTest(Enum):
         ],
     }
     # 时间
-    TIME = 0.5
+    TIME = 1
     # 魔法值
     MAGICAL = 0
     # 等待时间

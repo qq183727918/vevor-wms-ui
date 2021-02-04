@@ -26,35 +26,35 @@ async def main():
 
     # 输入租户ID
     click_handle = await page.xpath(ParamsTest.TENANT.value)
-    print(F'输入租户ID:{click_handle}')
+    print(F'租户ID:{click_handle}')
     await click_handle[ParamsTest.MAGICAL.value].type(ParamsTest.TENANT_ID.value, {'delay': ParamsTest.WAITING.value})
     await asyncio.sleep(ParamsTest.TIME.value)
     # 输入账号
     click_handle = await page.xpath(ParamsTest.USERNAME.value)
-    print(F'输入账号:{click_handle}')
+    print(F'账号:{click_handle}')
     await click_handle[ParamsTest.MAGICAL.value].type(ParamsTest.NAME.value, {'delay': ParamsTest.WAITING.value})
     await asyncio.sleep(ParamsTest.TIME.value)
     # 输入密码
     click_handle = await page.xpath(ParamsTest.PASSWORD.value)
-    print(F'输入密码:{click_handle}')
+    print(F'密码:{click_handle}')
     await click_handle[ParamsTest.MAGICAL.value].type(ParamsTest.PWD.value, {'delay': ParamsTest.WAITING.value})
     # 输入验证码
     click_handle = await page.xpath(ParamsTest.VERIFICATION.value)
-    print(F'输入验证码:{click_handle}')
+    print(F'验证码:{click_handle}')
     await click_handle[ParamsTest.MAGICAL.value].type(ParamsTest.VERIFICATION_CODE.value, {'delay': ParamsTest.WAITING.value})
     # 点击登录按钮
     click_handle = await page.xpath(ParamsTest.BUTTON.value)
-    print(F'点击登录按钮:{click_handle}')
+    print(F'登录按钮:{click_handle}')
     await click_handle[ParamsTest.MAGICAL.value].click()
     await asyncio.sleep(ParamsTest.TIME.value)
     # 点击入库管理
     click_handle = await page.xpath(ParamsTest.MANAGEMENT.value)
-    print(F'点击入库管理:{click_handle}')
+    print(F'入库管理:{click_handle}')
     await click_handle[ParamsTest.MAGICAL.value].click()
     await asyncio.sleep(ParamsTest.TIME.value)
     # 点击入库单
     click_handle = await page.xpath(ParamsTest.RECEIPT.value)
-    print(F'点击入库单:{click_handle}')
+    print(F'入库单:{click_handle}')
     await click_handle[ParamsTest.MAGICAL.value].click()
     await asyncio.sleep(ParamsTest.TIME.value)
     # 入库单号
