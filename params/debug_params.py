@@ -37,3 +37,19 @@ class ParamsTest(Enum):
     MANAGEMENT = "//span[text()='入库管理']"
     # 入库单
     RECEIPT = "//span[text()='入库单']"
+    # pyppeteer参数
+    PARAMS = {
+        # 关闭无头浏览器
+        "headless": False,
+        'dumpio': 'True',  # 防止浏览器卡住
+        r'userDataDir': './cache-data',  # 用户文件地址
+        "args": [
+            '--disable-infobars',  # 关闭自动化提示框
+            '--window-size=1920,1080',  # 窗口大小
+            '--log-level=30',  # 日志保存等级， 建议设置越小越好，要不然生成的日志占用的空间会很大 30为warning级别
+            '--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36',
+            '--no-sandbox',  # 关闭沙盒模式
+            '--start-maximized',  # 窗口最大化模式
+            # '--proxy-server=http://localhost:1080'  # 代理
+        ],
+    }

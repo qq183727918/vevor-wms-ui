@@ -18,7 +18,7 @@ pyppeteer.DEBUG = True
 
 
 async def main():
-    driver = await launch(headless=False, args=['--disable-infobars'], dumpio=True)
+    driver = await launch(**ParamsTest.PARAMS.value)
     page = await driver.newPage()
 
     await page.setViewport(ParamsTest.WINDOW_SIZE.value)
@@ -26,46 +26,48 @@ async def main():
 
     # 输入租户ID
     click_handle = await page.xpath(ParamsTest.TENANT.value)
-    print(click_handle)
-    await click_handle[0].type(ParamsTest.TENANT_ID.value)
+    print(F'输入租户ID:{click_handle}')
+    await click_handle[0].type(ParamsTest.TENANT_ID.value, {'delay': 100})
     await asyncio.sleep(1)
     # 输入账号
     click_handle = await page.xpath(ParamsTest.USERNAME.value)
-    print(click_handle)
-    await click_handle[0].type(ParamsTest.NAME.value)
+    print(F'输入账号:{click_handle}')
+    await click_handle[0].type(ParamsTest.NAME.value, {'delay': 100})
     await asyncio.sleep(1)
     # 输入密码
     click_handle = await page.xpath(ParamsTest.PASSWORD.value)
-    print(click_handle)
-    await click_handle[0].type(ParamsTest.PWD.value)
+    print(F'输入密码:{click_handle}')
+    await click_handle[0].type(ParamsTest.PWD.value, {'delay': 100})
     # 输入验证码
     click_handle = await page.xpath(ParamsTest.VERIFICATION.value)
-    print(click_handle)
-    await click_handle[0].type(ParamsTest.VERIFICATION_CODE.value)
+    print(F'输入验证码:{click_handle}')
+    await click_handle[0].type(ParamsTest.VERIFICATION_CODE.value, {'delay': 100})
     # 点击登录按钮
     click_handle = await page.xpath(ParamsTest.BUTTON.value)
-    print(click_handle)
+    print(F'点击登录按钮:{click_handle}')
     await click_handle[0].click()
     await asyncio.sleep(2)
     # 点击入库管理
     click_handle = await page.xpath(ParamsTest.MANAGEMENT.value)
-    print(click_handle)
+    print(F'点击入库管理:{click_handle}')
     await click_handle[0].click()
     await asyncio.sleep(1)
     # 点击入库单
     click_handle = await page.xpath(ParamsTest.RECEIPT.value)
-    print(click_handle)
+    print(F'点击入库单:{click_handle}')
     await click_handle[0].click()
     await asyncio.sleep(1)
     # 入库单号
     click_handle = await page.xpath(Warehouse.RECEIPT.value)
-    print(click_handle)
-    await click_handle[0].type(Warehouse.RECEIPT_NUM.value)
+    print(F'入库单号:{click_handle}')
+    await click_handle[0].type(Warehouse.RECEIPT_NUM.value, {'delay': 100})
     # 查询
     click_handle = await page.xpath(Warehouse.SELECT.value)
-    print(click_handle)
+    print(F'查询:{click_handle}')
     await click_handle[0].click()
     await asyncio.sleep(1)
+
+
     await driver.close()
 
 
