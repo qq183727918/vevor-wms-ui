@@ -3,7 +3,7 @@ _*_ coding: UTF-8 _*_
 @Time      : 2021/2/4 15:14
 @Author    : LiuXiaoQiang
 @Site      : https://github.com/qq183727918
-@File      : debug.py
+@File      : warehousereceipt.py
 @Software  : PyCharm
 """
 
